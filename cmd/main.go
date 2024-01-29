@@ -7,13 +7,13 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.comleobaiano//sniffer/pkg/capture"
+	"github.com/lb-studies/sniffer/pkg/capture"
 )
 
 func main() {
 	stopCapture := make(chan struct{})
 	go func() {
-		err := capture.StartCapture("wlan0")
+		err := capture.StartCapture("wlp0s20f3")
 		if err != nil {
 			log.Fatal(err)
 		}
